@@ -1,19 +1,22 @@
-import java.util.Arrays;
+import java.util.*;
 
 class Solution {
     public int thirdMax(int[] nums) {
 
-        int[] nums2 = Arrays.stream(nums)
-                            .distinct()
-                            .toArray();
+        Set<Integer> set = new HashSet<>();
 
-        Arrays.sort(nums2);
-
-        if (nums2.length >= 3) {
-            return nums2[nums2.length - 3];
-        } 
-        else {
-            return nums2[nums2.length - 1];
+        for (int num : nums) {
+            set.add(num);
         }
+
+        List<Integer> list = new ArrayList<>(set);
+
+
+        Collections.sort(list);
+
+        if (list.size() >= 3) {
+            return list.get(list.size() - 3);
+        }
+        return list.get(list.size() - 1);
     }
 }
