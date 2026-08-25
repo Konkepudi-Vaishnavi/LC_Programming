@@ -1,9 +1,20 @@
+import java.util.Arrays;
+
 class Solution {
     public char findTheDifference(String s, String t) {
-         for (int i = 0; i < s.length(); i++) {
-            t = t.replaceFirst(String.valueOf(s.charAt(i)), "");
+
+        char[] a = s.toCharArray();
+        char[] b = t.toCharArray();
+
+        Arrays.sort(a);
+        Arrays.sort(b);
+
+        for (int i = 0; i < a.length; i++) {
+            if (a[i] != b[i]) {
+                return b[i];
+            }
         }
-        
-        return t.charAt(0);
+
+        return b[b.length - 1];
     }
 }
