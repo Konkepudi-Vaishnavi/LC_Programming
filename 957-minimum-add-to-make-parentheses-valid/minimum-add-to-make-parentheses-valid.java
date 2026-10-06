@@ -8,8 +8,6 @@ class Solution {
             if (c == '(') {
                 openBrackets++;
             } else {
-                // If an open bracket exists, match it with the closing one
-                // If not, we need to add an open bracket.
                 if (openBrackets > 0) {
                     openBrackets--;
                 } else {
@@ -17,7 +15,6 @@ class Solution {
                 }
             }
         }
-    
         return minAddsRequired + openBrackets;
     }
 }
