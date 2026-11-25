@@ -7,7 +7,6 @@ class Solution {
             if (count == 0) {
                 can = num;
             }
-
             if (num == can) {
                 count++;
             } else {
